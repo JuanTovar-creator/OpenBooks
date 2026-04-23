@@ -1,0 +1,145 @@
+/* Wrapper del SearchBar */
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-busqueda {
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+/* FIX: Múltiples selectores para eliminar TODOS los outlines azules */
+.input-busqueda:focus,
+.input-busqueda:focus-visible,
+.form-control:focus,
+input.input-busqueda:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
+  outline: none !important;
+  outline-width: 0 !important;
+  outline-offset: 0 !important;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+
+/* FIX: Mayor especificidad para sobrescribir Bootstrap */
+.btn-buscar,
+.btn.btn-buscar,
+button.btn-buscar {
+  background-color: var(--primary) !important;
+  color: white !important;
+  font-weight: 600;
+  border: none !important;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-buscar:hover,
+.btn.btn-buscar:hover,
+button.btn-buscar:hover {
+  background-color: var(--primary-dark) !important;
+  color: white !important;
+  transform: scale(1.05);
+}
+
+.btn-buscar:focus,
+.btn.btn-buscar:focus,
+button.btn-buscar:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-paginacion {
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  background: transparent;
+  padding: 0.4rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-paginacion:hover {
+  background: var(--primary);
+  border: #fff;
+  color: #fff;
+}
+
+.btn-paginacion:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-paginacion:disabled {
+  background: #E2E8F0;
+  color: #94A3B8;
+  cursor: not-allowed;
+  transform: none;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.text-paginacion {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* FIX: Contenedor del historial - ALINEACIÓN PERFECTA */
+.search-wrapper #historial-busquedas {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  margin-top: -2px;
+  margin-right: 0;
+  padding: 0;
+  background: white;
+  border: 2px solid var(--primary);
+  border-radius: 0 0 20px 20px;
+  border-top: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.search-wrapper #historial-busquedas .list-group-item {
+  margin: 0 !important;
+  padding: 0.75rem 1rem !important;
+  border: none !important;
+  border-top: 1px solid #eee !important;
+  border-radius: 0 !important;
+  line-height: 1.4;
+  background: white;
+  text-align: left;
+  width: 100%;
+}
+
+.search-wrapper #historial-busquedas .list-group-item:first-child {
+  border-top: none !important;
+}
+
+.search-wrapper #historial-busquedas .list-group-item:hover {
+  background-color: #F1F5F9 !important;
+  cursor: pointer;
+}
+
+.search-wrapper #historial-busquedas .list-group-item:last-child {
+  border-radius: 0 0 18px 18px !important;
+}
+
+/* Asegurar que el input-group no tenga margin-bottom cuando el historial está visible */
+.search-wrapper .input-group {
+  margin-bottom: 0;
+  position: relative;
+}
